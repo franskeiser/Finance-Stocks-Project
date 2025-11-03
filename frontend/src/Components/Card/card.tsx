@@ -1,9 +1,13 @@
 import React from "react";
 import cute from "./cute.jpg";
 
-type Props = {};
+type Props = {
+  companyName?: string;
+  ticker: string;
+  price: number;
+};
 
-const card = (props: Props) => {
+const card = ({ companyName, ticker, price }: Props) => {
   return (
     <div className="card">
       <img
@@ -12,8 +16,10 @@ const card = (props: Props) => {
       />
 
       <div className="details">
-        <h2>Cute Dog</h2>
-        <p>This is a very cute dog.</p>
+        <h2>
+          {companyName} ({ticker})
+        </h2>
+        <p>{price}</p>
       </div>
 
       <p className="info">
